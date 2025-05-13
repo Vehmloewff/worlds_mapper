@@ -162,6 +162,11 @@ export async function labelMap(args: string[]): Promise<void> {
 	await dtils.writeJson('map/meta.json', newMeta, { separator: '\t' })
 }
 
+/** Downloads `url` and parses the elevation data to temp/elevation.json */
+export async function downloadElevation(args: string[]): Promise<void> {
+	const [url] = args
+}
+
 /** Clean up artifacts from previous jobs */
 export async function clean(): Promise<void> {
 	await Deno.remove('temp', { recursive: true })
